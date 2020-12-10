@@ -1,0 +1,44 @@
+{
+  "name": "d365typescript",
+  "version": "1.0.0",
+  "description": "A typescript starter kit for d365",
+  "main": "index.js",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --declaration --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
+    "lint": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rexkenley/d365typescript.git"
+  },
+  "keywords": [
+    "d365",
+    "typescript"
+  ],
+  "author": "Rex Kenley Tan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rexkenley/d365typescript/issues"
+  },
+  "homepage": "https://github.com/rexkenley/d365typescript#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/jest": "^26.0.18",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-typescript-prettier": "^4.1.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
+  }
+}
